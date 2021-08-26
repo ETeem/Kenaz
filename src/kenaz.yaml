@@ -1,0 +1,51 @@
+
+# Address and Token To Access Vault
+vault_address: "http://your_vault_server:8200"
+vault_token: "your_vault_token"
+
+# Serverlist Access Method Can Be "vcommander", "url", or "file"
+# If using URL Kenaz Will Try To Parse The HTTP Response by newline "\n"
+# Same if using file.  Should be 1 server per line
+serverlist_access_method: "odin"
+
+# The Path To The File or The URL To Get The Serverlist from
+serverlist_path: ""
+
+# if using vcommander or URL, this will be the login creds
+# Set To "" if no username/password is required
+serverlist_username: "username"
+serverlist_password: "password"
+
+# The Path To the SSH Key Used For Passwordless SSH
+# If running in a container, you will need to either
+# volume this in, or include it in the docker image
+ssh_key_file_path: "/root/.ssh/id_rsa"
+
+# The Users who's password will change
+users_to_change:
+  - oracle
+  - grid 
+
+# The Length Of The Generated Passwords
+password_length: 30
+
+# Use The Log File Or Not.  If Set To True, You Will 
+# Need to clean these up, or setup logrotate.  The Application
+# Will just keep appending to this log.
+use_log_file: true
+
+# The Location To Write Logs if you do decide to use log files
+log_file_location: "/logs/kenaz.log"
+
+# To Send Messages On Failures
+smtp_server: "smtp.yourserver.com:25"
+
+# Email Address To Notify 
+email_address: "who@yourdomain.com"
+
+# Email it Comes From
+from_address: "kenaz@yourdomain.com"
+
+blacklist:
+  - leavethisserveralone 
+  - leavethisserveralone
